@@ -150,7 +150,7 @@ aside .top{
 }
 .sideBar a:last-child{
     position: absolute;
-    bottom: 3rem;
+    bottom: 0rem;
     width: 100%;
 }
 .sideBar a.active{
