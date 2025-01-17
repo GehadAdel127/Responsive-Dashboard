@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --primary : #7380ec !important;
+    --danger : #ff7782 !important;
+    --success : #41f1b6 !important;
+    --warning : #ffbb55 !important;
+    --white : #fff;
+    --infoDark : #7d8da1;
+    --infoLight : #dce1eb;
+    --dark : #363949;
+    --light : #848bc82e;
+    --priVarient : #111e88;
+    --darkVarient : #677483;
+    --backGround : #f6f6f9;
+    --boxShadow : 0 2rem 3rem var(--light);
+}
+
+/* dark theme variables */
+.darkThemeVar{
+    --backGround : #181a1e;
+    --white : #202528;
+    --dark : #edeffd;
+    --darkVarient : #a3bdcc;
+    --light : #00000066;
+    --boxShadow : 0 2rem 3rem var(--light);
+}
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: Poppins;
+}
+html{
+    font-size: 14px;
+}
+body{
+    overflow-x: hidden;
+    background-color: var(--backGround);
+    color: var(--dark);
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    font-size: 0.88rem;
+}
+.container{
+    display: grid;
+    grid-template-columns: 14rem auto 20rem;
+    gap: 1.8rem;
+    width: 96%;
+    margin: 0 auto;
+}
+a , b{
+    color: var(--dark);
+}
+.profilePicture{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.mutedText{
+    color: var(--infoDark);
+}
+p{
+    color: var(--darkVarient);
+}
+.primary{
+    color: var(--primary);
+}
+.success{
+    color: var(--success);
+}
+.warning{
+    color: var(--warning);
+}
+.danger{
+    color: var(--danger);
+}
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.4rem;
+}
+h3{
+    font-size: 0.87rem;
+}
+h4{
+    font-size: 0.8rem;
+}
+h5{
+    font-size: 0.77rem;
+}
+
+aside{
+    height: 100vh;
+}
+aside .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+.logo{
+    display: flex;
+    gap: 0.8rem;
+    padding: 10px;
+}
+.logo img{
+    width: 2rem;
+    height: 2rem;
+}
+.close{
+    display: none;
+}
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+.sideBar h3{
+    font-weight: 500;
+}
+.sideBar a{
+    color: var(--infoDark);
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    gap: 1rem;
+    position: relative;
+    height: 3.7rem;
+    transition: all 0.5s ease;
+}
+.sideBar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+.sideBar a:last-child{
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+}
+.sideBar a.active{
+    margin-left: 0;
+    color: var(--primary);
+    background-color: var(--light);
+}
+.sideBar a:hover{
+    color: var(--primary);
+}
+.sideBar a.active:before{
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--primary);
+}
+.sideBar a.active span{
+    color: var(--primary);
+    margin-left: calc(1rem - 3px);
+}
+.sideBar a:hover span{
+    margin-left: 1rem;
+}
+.messagesCount{
+    background-color: var(--danger);
+    color: var(--white);
+    padding: 2px 10px;
+    border-radius: 0.4rem;
+    font-size: 11px !important;
+}
+
+
+
+/* Main section */
+main{
+    margin-top: 3.5rem;
+}
+.date{
+    display: inline-block;
+    background-color: var(--light);
+    border-radius: 1.4rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+}
+.date input[type = "date"]{
+    background-color: transparent;
+    color: var(--dark);
+}
+.insights{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 1.6rem;
+}
+.insights > div{
+    background-color: var(--white);
+    padding: 1.8rem;
+    border-radius: 2rem;
+    margin-top: 1rem;
+    box-shadow: var(--boxShadow);
+    transition: all 0.3s ease;
+}
+.insights > div:hover{
+    box-shadow: none;
+}
+.insights > div span{
+    padding: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 2rem;
+}
+.insights > div.expenses span{
+    background-color: var(--danger);
+}
+.insights > div.income span{
+    background-color: var(--success) !important;
+}
+.insights > div .middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.insights h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+.progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+.insights svg{
+    width: 7rem;
+    height: 7rem;
+}
+/* animation for circle */
+@keyframes progress {
+    from {
+        stroke-dashoffset: 226;
+    }
+    to {
+        stroke-dashoffset: var(--target-offset);
+    }
+}
+.insights svg circle {
+    fill: none;
+    stroke: var(--primary);
+    stroke-linecap: round;
+    stroke-width: 14;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 226;
+    animation: progress 2s ease-in-out forwards;
+}
+.sales svg circle {
+    --target-offset: 43;
+}
+.expenses svg circle {
+    --target-offset: 85.88;
+}
+.income svg circle {
+    --target-offset:126.56 ;
+}
+.progress .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.insights small{
+    margin-top: 1.6rem;
+    display: block;
+}
+.recentOrder{
+    margin-top: 2rem;
+}
+.recentOrder h2{
+    margin-bottom: 0.8rem;
+}
+.recentOrder table{
+    background: var(--white);
+    width: 100%;
+    padding: 1.8rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: var(--boxShadow);
+    transition: all 0.3s ease;
+}
+.recentOrder table:hover{
+    box-shadow: none;
+}
+.recentOrder table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--light);
+    color: var(--darkVarient);
+}
+table tbody tr:last-child td{
+    border: none;
+}
+.recentOrder table tbody td.primary{
+    color: var(--primary);
+}
+.recentOrder table tbody td.warning{
+    color: var(--warning);
+}
+.recentOrder table tbody td.danger{
+    color: var(--danger);
+}
+main a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--primary);
+}
+.right{
+    margin-top: 1.4rem;
+}
+.right .top{
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.top button{
+    display: none;
+}
+.themeAndProfile{
+    display: flex;
+    align-items: center;
+    gap: 95px;
+}
+.themeToggler{
+    background-color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+.themeToggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.themeToggler span.active{
+    background-color: var(--primary);
+    color: white;
+    border-radius: 0.4rem;
+}
+.top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
+.profilePic img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.recentUpdates{
+    margin-top: 1rem;
+}
+.recentUpdates h2{
+    margin-bottom: 0.8rem;
+}
+.recentUpdates .updates{
+    background: var(--white);
+    padding: 1.8rem;
+    border-radius: 2rem;
+    box-shadow: var(--boxShadow);
+    transition: all 0.3s ease;
+}
+.recentUpdates .updates:hover{
+    box-shadow: none;
+}
+.updates .update{
+    margin-bottom: 10px;
+}
+.updates .update .profile{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+}
+
+/* sales analytics */
+
+.right .salesAnalytics{
+    margin-top: 2rem;
+}
+.salesAnalytics h2{
+    margin-bottom: 0.8rem;
+}
+.salesAnalytics .item{
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 1.2rem;
+    box-shadow: var(--boxShadow);
+    transition: all 0.3s ease;
+}
+.salesAnalytics .item:hover{
+    box-shadow: none;
+}
+.salesAnalytics .item .right{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+.salesAnalytics .item .icon{
+    padding: 0.6rem;
+    color: var(--white);
+    border-radius: 50%;
+    background-color: var(--primary);
+    display: flex;
+}
+.salesAnalytics .item.offline .icon{
+    background-color: var(--danger);
+}
+.salesAnalytics .item.customers .icon{
+    background-color: var(--success);
+}
+.salesAnalytics .addProduct{
+    background-color: transparent;
+    border: 2px dashed var(--primary);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.salesAnalytics .addProduct div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.salesAnalytics .addProduct div h3{
+    font-weight: 600;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* media queries*/
+@media screen and (max-width : 1200px) {
+    .container{
+        width: 96%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+    aside .logo h2{
+        display: none;
+    }
+    aside .sideBar h3{
+        display: none;
+    }
+    .sideBar a{
+        width: 5.6rem;
+    }
+    .sideBar a:last-child{
+        position: relative;
+        margin-top: 2.8rem;
+    }
+    main .insights{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .recentOrder{
+        width: 99%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+    .recentOrder table{
+        width: 83vw;
+    }
+    table thead tr th:last-child, table thead tr th:first-child{
+        display: none;
+    }
+    table tbody tr td:last-child, table tbody tr td:first-child{
+        display: none;
+    }
+    .sideBar a:hover span{
+        margin-left: 0.6rem;
+    }
+    .right .top{
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    aside{
+        display: none;
+        position: fixed;
+        left: -100%;
+        background-color: var(--white);
+        width: 18rem;
+        z-index: 10;
+        box-shadow: 1rem 3rem 4rem var(--light);
+        height: 100vh;
+        padding-right: 1.8rem;
+        animation: showMenu 0.5s ease forwards;
+    }
+    @keyframes showMenu {
+        to{
+            left : 0;
+        }
+    }
+    aside .logo{
+        margin-left: 1rem;
+    }
+    aside .logo h2{
+        display: inline;
+    }
+    aside .sideBar h3{
+        display: inline;
+    }
+    aside .sideBar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    .sideBar a:last-child{
+        position: absolute;
+        bottom: 5rem;
+    }
+    .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+    .recentOrder{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+    .recentOrder table{
+        width: 100%;
+        margin: 0;
+    }
+    .right{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+    .right .top{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background-color: var(--white);
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--light);
+        justify-content: end;
+    }
+    .themeAndProfile{
+        gap: 20px;
+    }
+    .right .themeToggler{
+        width: 4.4rem;
+    }
+    .profile .info{
+        display: none;
+    }
+    .right .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--dark);
+        position: absolute;
+        left: 1rem;
+    }
+    .top button span{
+        font-size: 2rem;
+    }
+
+}
