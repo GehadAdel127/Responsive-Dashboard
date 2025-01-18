@@ -470,7 +470,7 @@ main a{
 /* media queries*/
 @media screen and (max-width : 1200px) {
     .container{
-        width: 96%;
+        width: 100%;
         grid-template-columns: 7rem auto 23rem;
     }
     aside .logo h2{
